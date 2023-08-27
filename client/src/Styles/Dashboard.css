@@ -1,0 +1,83 @@
+.dashboard-wrapper {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard-header {
+  width: 100%;
+  height: 84px * 2;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.dashboard-header h1 {
+  margin: 0;
+  padding: 0;
+  font-size: 28px;
+  font-weight: 500;
+  color: #302f2f;
+  width: 50%;
+  margin: 38px 24px;
+}
+
+.dashboard-header button {
+  width: 220px;
+  height: 100%;
+  border: 2px solid #472183;
+  background-color: transparent;
+  border-radius: 16px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #472183;
+  padding: 16px 24px;
+  cursor: pointer;
+  margin: 28px 24px;
+  transition: all 0.2s ease-in-out;
+}
+
+.dashboard-header button img {
+  width: 24px;
+  height: 24px;
+  margin-right: 4px;
+  margin-bottom: -4px;
+}
+
+.dashboard-header button:hover {
+  background-color: #472183;
+  color: #fff;
+  transition: all 0.2s ease-in-out;
+}
+
+.active-appointments p {
+  padding: 0;
+  font-size: 18px;
+  font-weight: 500;
+  color: #302f2f;
+  margin: 36px 86px;
+  width: fit-content;
+}
+
+.half-width-border {
+  position: relative;
+}
+
+.half-width-border::after {
+  content: '';
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  width: 66%;
+  border-bottom: 2px solid #472183;
+}
+
+.appointments-wrapper {
+  width: 90%;
+  margin: 0 5%;
+  display: flex;
+  flex-direction: column;
+}

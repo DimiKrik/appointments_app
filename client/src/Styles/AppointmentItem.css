@@ -1,0 +1,52 @@
+.appointment-items {
+  width: 95%;
+  margin: 0 auto;
+}
+
+.items-header {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  border-bottom: #00000040 1px solid;
+}
+
+.items-header p {
+  padding: 8px 16px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #302f2f;
+  /* width: 50px; */
+  width: 100%;
+  /* margin: 0 5%; */
+}
+
+.item {
+  width: 100%;
+  margin: 8px auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  /* background-color: #00000040; */
+  border-radius: 12px;
+}
+
+.item p {
+  padding: 4px 16px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #302f2f;
+  width: 100%;
+}
+
+.item:nth-child(even) {
+  background-color: #00000030;
+}
+
+.item:nth-child(odd) {
+  background-color: transparent;
+  border: 1px solid #00000030;
+}
