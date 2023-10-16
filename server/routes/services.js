@@ -1,19 +1,29 @@
-import express from "express";
-import { createService, deleteService, getService, getallService, updateService } from "../controllers/service.js";
-import { verifyAdmin, verifyUser, verifyTechnician } from "../utils/verifyToken.js";
+import express from 'express';
+import {
+  createService,
+  deleteService,
+  getService,
+  getallService,
+  updateService,
+} from '../controllers/service.js';
+import {
+  verifyAdmin,
+  verifyUser,
+  verifyTechnician,
+} from '../utils/verifyToken.js';
 
 const router = express.Router();
 
 //CREATE
-router.post("/", verifyUser, createService);
+router.post('/', createService);
 
 //UPDATE
-router.put("/:id", updateService);
+router.put('/:id', updateService);
 //DELETE
-router.delete("/:id", deleteService);
+router.delete('/:id', deleteService);
 //GET
-router.get("/:id", getService);
+router.get('/:id', getService);
 //GET ALL
-router.get("/", verifyTechnician, getallService);
+router.get('/', getallService);
 
 export default router;

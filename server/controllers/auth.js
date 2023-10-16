@@ -10,6 +10,10 @@ export const register = async (req, res, next) => {
 
     const newUser = new User({
       username: req.body.username,
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
+      telephone: req.body.telephone,
+      address: req.body.address,
       email: req.body.email,
       isAdmin: req.body.isAdmin,
       isTechnician: req.body.isTechnician,
@@ -40,13 +44,14 @@ export const login = async (req, res, next) => {
       process.env.JWT
     );
 
-    const { password, isTechnician, isAdmin, ...otherDetails } = user._doc;
+    const { password, isTechnician, isAdmin, _id, ...otherDetails } = user._doc;
     res
       .cookie("access_token", token, {
         httpOnly: true,
+        sameSite: "Strict",
       })
       .status(200)
-      .json({ ...otherDetails });
+      .json({_id, ...otherDetails });
   } catch (err) {
     next(err);
   }

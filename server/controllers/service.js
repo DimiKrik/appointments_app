@@ -1,4 +1,4 @@
-import Service from "../models/Services.js";
+import Service from '../models/Services.js';
 
 export const createService = async (req, res, next) => {
   const newService = new Service(req.body);
@@ -27,7 +27,7 @@ export const updateService = async (req, res, next) => {
 export const deleteService = async (req, res, next) => {
   try {
     await Service.findByIdAndDelete(req.params.id);
-    res.status(200).json("Service has been deleted");
+    res.status(200).json('Service has been deleted');
   } catch (err) {
     next(err);
   }
@@ -44,7 +44,7 @@ export const getService = async (req, res, next) => {
 
 export const getallService = async (req, res, next) => {
   try {
-    const service = await Service.find();
+    const service = await Service.find().sort({ name: 1 , price: 1});
     res.status(200).json(service);
   } catch (err) {
     next(err);

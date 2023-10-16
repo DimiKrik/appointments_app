@@ -1,6 +1,6 @@
 .dashboard-wrapper {
-  width: 100%;
-  margin: 0 auto;
+  width: calc(100% - 240px);
+  margin: 84px 0 0 240px;
   display: flex;
   flex-direction: column;
 }
@@ -30,7 +30,7 @@
   height: 100%;
   border: 2px solid #472183;
   background-color: transparent;
-  border-radius: 16px;
+  border-radius: 16px 0;
   font-size: 16px;
   font-weight: 600;
   color: #472183;
@@ -80,4 +80,19 @@
   margin: 0 5%;
   display: flex;
   flex-direction: column;
+}
+
+@media (max-width: 768px) {
+  .dashboard-wrapper {
+    width: 100%;
+    margin: 84px auto 0 auto;
+  }
+
+  .active-appointments p {
+    margin: 36px 24px;
+  }
+
+  .dashboard-header button {
+    min-width: 35%;
+  }
 }

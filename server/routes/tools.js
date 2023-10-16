@@ -1,19 +1,25 @@
-import express from "express";
-import { verifyAdmin } from "../utils/verifyToken.js";
-import { createTool, deleteTool, getTool, getallTool, updateTool } from "../controllers/tool.js";
+import express from 'express';
+import { verifyAdmin } from '../utils/verifyToken.js';
+import {
+  createTool,
+  deleteTool,
+  getTool,
+  getallTool,
+  updateTool,
+} from '../controllers/tool.js';
 
 const router = express.Router();
 
 //CREATE
-router.post("/", createTool);
+router.post('/', createTool);
 
 //UPDATE
-router.put("/:id", updateTool);
+router.put('/:id', updateTool);
 //DELETE
-router.delete("/:id", deleteTool);
+router.delete('/:id', deleteTool);
 //GET
-router.get("/:id", getTool);
+router.get('/:id', getTool);
 //GET ALL
-router.get("/",getallTool);
+router.get('/', getallTool);
 
 export default router;

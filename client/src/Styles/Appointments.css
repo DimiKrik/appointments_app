@@ -1,10 +1,20 @@
 .appointments-wrapper {
-  width: 100%;
-  margin: 0 auto;
+  width: calc(90% - 240px);
+  margin: 84px 0 0 calc(240px + 5%);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
+}
+
+.appointments-header {
+  width: 100%;
+  height: 84px * 2;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .appointments-header h2 {
@@ -17,6 +27,27 @@
   margin: 38px 24px;
 }
 
+.appointments-header button {
+  width: 220px;
+  height: 100%;
+  border: 2px solid #472183;
+  background-color: transparent;
+  border-radius: 16px 0px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #472183;
+  padding: 16px 24px;
+  cursor: pointer;
+  margin: 28px 24px;
+  transition: all 0.2s ease-in-out;
+}
+
+.appointments-header button:hover {
+  background-color: #472183;
+  color: #fff;
+  transition: all 0.2s ease-in-out;
+}
+
 h2.half-width-border {
   position: relative;
 }
@@ -26,11 +57,160 @@ h2.half-width-border {
   position: absolute;
   bottom: -6px;
   left: 0;
-  width: 33%;
+  width: 11%;
   border-bottom: 2px solid #472183;
+}
+
+.items-header {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 2px solid #472183;
+}
+.items-header p {
+  padding: 0px 12px;
+  flex-basis: 20%;
+  margin: 0 auto;
 }
 
 .items {
   width: 100%;
   margin: 0 auto;
+}
+
+.item:nth-child(even) {
+  background-color: #91919128;
+  border: 1px solid #47218349;
+  border-radius: 0px 10px 0px 10px;
+
+}
+
+.item:nth-child(odd) {
+  background-color: #ffffffa2;
+  border: 1px solid #47218360;
+  border-radius: 0px 10px 0px 10px;
+
+}
+
+.delete_banner {
+  margin-top: 8px;
+  width: 50%;
+  height: 60px;
+  background-color: #79ac78;
+  position: fixed;
+  z-index: 1;
+  top: 84px;
+  left: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  font-weight: 500;
+}
+
+.red {
+  background-color: #ffc1ba;
+  color: #a41111;
+  display: flex;
+  flex-direction: column;
+  height: fit-content;
+  padding: 12px 24px;
+  position: fixed;
+}
+
+.delete_buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.delete_buttons button {
+  width: 100px;
+  height: 40px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  margin: 0 48px;
+  border: 1px solid #a41111;
+}
+
+.delete_buttons button:hover {
+  background-color: #a41111;
+  color: #fff;
+  transition: all 0.2s ease-in-out;
+}
+
+.scale-in-top {
+  -webkit-animation: scale-in-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: scale-in-top 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+
+@-webkit-keyframes scale-in-top {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    -webkit-transform-origin: 50% 0%;
+    transform-origin: 50% 0%;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transform-origin: 50% 0%;
+    transform-origin: 50% 0%;
+    opacity: 1;
+  }
+}
+@keyframes scale-in-top {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    -webkit-transform-origin: 50% 0%;
+    transform-origin: 50% 0%;
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    -webkit-transform-origin: 50% 0%;
+    transform-origin: 50% 0%;
+    opacity: 1;
+  }
+}
+
+@media (max-width: 1024px) {
+  .items-header {
+    display: none;
+  }
+  .appointments-header h2.half-width-border::after {
+    width: 33%;
+  }
+}
+
+@media (max-width: 768px) {
+  .appointments-wrapper {
+    width: 90%;
+    margin: 84px auto 0 auto;
+  }
+
+  .delete_banner {
+    width: 80%;
+    left: auto;
+    top: 84px;
+  }
+
+  .delete_banner h3 {
+    width: 80%;
+    font-size: 16px;
+  }
 }

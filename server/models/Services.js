@@ -5,16 +5,9 @@ const ServiceSchema = new mongoose.Schema({
         type: String,
         required:true
     },
-    type:{
-        type: String,
-        required:true
-    },
-    tools:{
-        type: String,
-        required:true
-    },
     price:{
-        type: Number
+        type: Number,
+        required:true
     }
 });
 
