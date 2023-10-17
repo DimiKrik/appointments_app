@@ -24,12 +24,10 @@ const TechnicianFormEdit = (props) => {
         newTechnician
       );
       console.log('Technician added successfully:', response.data);
-      // Close the form or handle any other actions upon successful submission
       props.handleShowForm(false);
       props.updateAppointment(true, 'updated');
     } catch (error) {
       console.error('Error adding technician:', error);
-      // Handle error states or display an error message to the user
     }
   };
 

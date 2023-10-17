@@ -28,13 +28,11 @@ const TechnicianForm = (props) => {
       const response = await axios.post('/auth/register', newTechnician);
       console.log('Technician added successfully:', response.data);
 
-      // Close the form or handle any other actions upon successful submission
       props.handleShowForm(false);
       props.fetchUserData(true, 'added');
       props.timer();
     } catch (error) {
       console.error('Error adding technician:', error);
-      // Handle error states or display an error message to the user
     }
   };
 

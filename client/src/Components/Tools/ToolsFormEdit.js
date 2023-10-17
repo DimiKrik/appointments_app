@@ -20,13 +20,11 @@ const ToolsFormEdit = (props) => {
       const response = await axios.put(`/tools/${props.tool._id}`, updatedTool);
       console.log('Tool added successfully:', response.data);
 
-      // Close the form or handle any other actions upon successful submission
       props.handleShowForm(false);
       props.updateAppointment(true, 'updated');
       props.timer();
     } catch (error) {
       console.error('Error adding service:', error);
-      // Handle error states or display an error message to the user
     }
   };
 

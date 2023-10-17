@@ -23,7 +23,6 @@ const Tools = (props) => {
   const fetchToolsData = async (visible, action) => {
     try {
       const response = await axios.get('/tools/');
-      // Assuming the response contains an array of technician_ids
       setTools(response.data);
       setIsVisible(visible);
       setAction(action);
